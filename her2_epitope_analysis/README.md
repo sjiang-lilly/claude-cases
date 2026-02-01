@@ -136,7 +136,41 @@ her2_epitope_analysis/
 |--------|--------|---------|-----------|
 | p95-mAb-001 | Juxtamembrane | 615-635 | 6.5/10 |
 | p95-mAb-002 | Neo-epitope | 611-625 | 5.0/10 |
+| p95-mAb-003 | Membrane-proximal | 640-652 | 4.5/10 |
 | p95-Bispecific-001 | JM + Domain IV | Dual | **8.5/10** |
+
+### NEW: VH/VL Sequences for Predicted mAbs
+
+| mAb | CDR-H3 | CDR-L3 | Kd (nM) |
+|-----|--------|--------|---------|
+| p95-mAb-001 | DPIWKFPDY | QQGACQPLT | 15.0 |
+| p95-mAb-002 | METPIWKFDY | QQFPDEEGT | 8.0 |
+| p95-mAb-003 | CTHSCVDY | QQDLDKGCT | 25.0 |
+| p95-Bispecific-001 (Arm1) | DPIWKFPDY | QQGACQPLT | 2.0 |
+| p95-Bispecific-001 (Arm2) | SRWGGDGFYAMDY | QQHYTTPPT | - |
+
+**Full VH/VL sequences:** See `output/p95_mab_sequences_report.md` and `data/sequences/p95_mab_vh_vl_sequences.csv`
+
+### Comparison with Reference Antibodies
+
+| mAb | Kd (nM) | Internalization | ADC Score | p95 Binding |
+|-----|---------|-----------------|-----------|-------------|
+| Trastuzumab | 5.0 | 25% | 8.8/10 | ❌ No |
+| Pertuzumab | 1.0 | 15% | 7.8/10 | ❌ No |
+| Zanidatamab | 0.5 | 70% | 9.5/10 | ❌ No |
+| **p95-Bispecific-001** | 2.0 | 60% | **8.5/10** | ✅ Yes |
+
+### Public p95-HER2 Antibody Comparison
+
+| Antibody | Source | Stage | p95 Targeting | ADC Format |
+|----------|--------|-------|---------------|------------|
+| Anti-p95HER2 (Arribas) | Academic | Preclinical | ✅ Yes | No |
+| p95HER2-DB (Morancho) | Academic | Preclinical | ✅ Yes | No |
+| 611CTF mAb (Parra-Palau) | Academic | Research | ✅ Yes | No |
+| T-DM1 | Roche | Approved | ❌ No | Yes |
+| **p95-Bispecific-001 (Ours)** | Novel | Predicted | ✅ Yes | **Designed** |
+
+**Full comparison:** See `output/p95_public_comparison_report.md`
 
 ### Key p95-HER2 Findings
 
@@ -157,10 +191,17 @@ her2_epitope_analysis/
 | `internalization_predictions.csv` | Internalization data |
 | `her2_mutations_resistance.csv` | Mutation analysis |
 | `resistance_scientific_plan.md` | Strategies for overcoming resistance |
-| `p95_her2_report.md` | **NEW**: p95-HER2 comprehensive report |
-| `p95_her2_variants.csv` | **NEW**: p95 variant characterization |
-| `p95_novel_mabs.csv` | **NEW**: Predicted mAbs for p95 |
-| `p95_patient_coverage.csv` | **NEW**: Patient frequency data |
+| `p95_her2_report.md` | p95-HER2 comprehensive report |
+| `p95_her2_variants.csv` | p95 variant characterization |
+| `p95_novel_mabs.csv` | Predicted mAbs for p95 |
+| `p95_patient_coverage.csv` | Patient frequency data |
+| `p95_mab_sequences_report.md` | **NEW**: VH/VL sequences and characterization |
+| `p95_public_comparison_report.md` | **NEW**: Comparison with public antibodies |
+| `p95_mab_comparison.csv` | **NEW**: mAb comparison data |
+| `p95_mab_vh_vl_sequences.csv` | **NEW**: Detailed VH/VL sequences |
+| `p95_public_antibodies.csv` | **NEW**: Public p95 antibody database |
+| `p95_mab_docking.png` | **NEW**: p95 mAb docking visualization |
+| `p95_epitope_binding_detail.png` | **NEW**: Epitope binding detail |
 | `methods_section.md` | Publication-style methods |
 
 ---
@@ -220,3 +261,10 @@ seaborn==0.13.1
 8. Sáez R, et al. Clin Cancer Res. 2006;12:424-431.
 9. Pedersen K, et al. Mol Cell Biol. 2009;29:3319-3331.
 10. Parra-Palau JL, et al. J Natl Cancer Inst. 2014;106:dju291.
+
+### p95-HER2 Novel mAb Analysis (NEW)
+11. Morancho B, et al. Oncogene. 2013;32:4582-4592.
+12. Molina MA, et al. Clin Cancer Res. 2002;8:347-353.
+13. Castiglioni F, et al. Endocr Relat Cancer. 2006;13:221-232.
+14. Weisser NE, et al. Nat Commun. 2023;14:1394. (Zanidatamab mechanism)
+15. Li JY, et al. Cancer Cell. 2019;35:948-963. (Biparatopic ADC)

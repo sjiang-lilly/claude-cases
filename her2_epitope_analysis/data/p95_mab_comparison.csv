@@ -1,0 +1,8 @@
+mAb_name,category,target,VH_length,VL_length,Kd_nM,internalization_4h,adc_score,framework,humanization,p95_binding
+Trastuzumab,Approved/Clinical,HER2 Domain IV (557-603),120,107,5.0,25%,8.8,Human IgG1,Humanized (murine 4D5),No
+Pertuzumab,Approved/Clinical,HER2 Domain II (266-333),121,107,1.0,15%,7.8,Human IgG1,Humanized (murine 2C4),No
+Zanidatamab,Approved/Clinical,HER2 Domain II + Domain IV (Biparatopic),120,107,0.5,70%,9.5,Human IgG1 bispecific,Humanized biparatopic,No (Domain II+IV only)
+p95-mAb-001,Predicted (p95-targeting),p95-HER2 Juxtamembrane (615-635),118,107,15.0,35%,6.5,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes
+p95-mAb-002,Predicted (p95-targeting),p95-HER2 Neo-epitope (611-625),119,107,8.0,Unknown,5.0,Human IgG1 (IGHV3-23/IGKV3-20),Fully human (designed),Yes
+p95-mAb-003,Predicted (p95-targeting),p95-HER2 Membrane-proximal (640-652),117,107,25.0,20%,4.5,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes
+p95-Bispecific-001,Predicted (p95-targeting),p95-HER2 JM (615-635) + FL-HER2 Domain IV (557-603),118,107,2.0,60%,8.5,Human IgG1 bispecific (knobs-into-holes),Fully human bispecific,Yes

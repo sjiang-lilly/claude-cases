@@ -26,6 +26,17 @@
 | 16 | Summary Schematic | 22:58:00 | 23:05:00 | 7.0 min | Project summary figure |
 | **Subtotal (p95 Update)** | | | | **~20 min** | p95-HER2 expansion |
 
+## Additional: p95-HER2 Novel mAb Enhancement
+
+| Step | Task | Start Time | End Time | Duration | Notes |
+|------|------|------------|----------|----------|-------|
+| 17 | VH/VL Sequence Design | 23:10:00 | 23:18:00 | 8.0 min | Designed VH/VL for 4 predicted mAbs |
+| 18 | mAb Characterization Comparison | 23:18:00 | 23:22:00 | 4.0 min | Compared with Trastuzumab, Pertuzumab, Zanidatamab |
+| 19 | 3D Docking HTML Generation | 23:22:00 | 23:28:00 | 6.0 min | 4 interactive HTML files (py3Dmol) |
+| 20 | Public Antibody Comparison | 23:28:00 | 23:35:00 | 7.0 min | Literature comparison, IP landscape |
+| 21 | Documentation Update | 23:35:00 | 23:45:00 | 10.0 min | Updated all .md files, added references |
+| **Subtotal (Enhancement)** | | | | **~35 min** | VH/VL sequences + 3D docking + comparison |
+
 ---
 
 ## Grand Total
@@ -34,7 +45,8 @@
 |-------|----------|
 | Original Analysis (Steps 1-10) | ~30 min |
 | p95-HER2 Update (Steps 11-16) | ~20 min |
-| **Total Project Time** | **~50 min** |
+| p95 Novel mAb Enhancement (Steps 17-21) | ~35 min |
+| **Total Project Time** | **~85 min** |
 
 ---
 
@@ -60,3 +72,16 @@
 15. `images/p95_mab_evaluation.png` - ADC suitability scores
 16. `output/p95_her2_report.md` - Comprehensive p95 analysis
 17. `images/project_summary.png` - Project summary schematic
+
+### p95-HER2 Novel mAb Enhancement (NEW)
+18. `data/p95_mab_comparison.csv` - mAb comparison data
+19. `data/sequences/p95_mab_vh_vl_sequences.csv` - Complete VH/VL sequences
+20. `data/p95_public_antibodies.csv` - Public p95 antibody database
+21. `output/p95_mab_sequences_report.md` - VH/VL characterization report
+22. `output/p95_public_comparison_report.md` - Literature comparison report
+23. `images/p95_mab_001_3d.html` - p95-mAb-001 3D docking
+24. `images/p95_mab_002_3d.html` - p95-mAb-002 3D docking
+25. `images/p95_mab_003_3d.html` - p95-mAb-003 3D docking
+26. `images/p95_bispecific_001_3d.html` - Bispecific 3D docking
+27. `images/p95_mab_docking.png` - Docking schematic overview
+28. `images/p95_epitope_binding_detail.png` - Epitope binding detail

@@ -1,0 +1,6 @@
+antibody_name,source,target,epitope,development_status,mechanism,efficacy,limitations,reference
+Anti-p95HER2 (Arribas lab),"Arribas J et al., Cancer Res 2011",p95-HER2 juxtamembrane,611-652 region,Preclinical,Direct binding to p95-specific region,Inhibits p95-HER2 signaling in vitro,Not progressed to clinical trials,PMID: 21343386
+p95HER2-DB (Morancho et al.),"Morancho B et al., Oncogene 2013",p95-HER2 + HER3,Dual targeting approach,Preclinical,Blocks p95-HER2/HER3 heterodimerization,Reduces tumor growth in xenografts,Complex manufacturing,PMID: 23435418
+611CTF-specific mAb (Parra-Palau),"Parra-Palau JL et al., J Natl Cancer Inst 2014",p95-CTF611 neo-epitope,Met611 N-terminus,Research tool,Specific detection of p95-CTF611,Diagnostic potential demonstrated,Not developed as therapeutic,PMID: 25326645
+T-DM1 + Lapatinib combo,Multiple clinical studies,Combined ECD + kinase targeting,Domain IV + intracellular kinase,Clinical (approved individually),ADC + TKI dual mechanism,Overcomes some p95-mediated resistance,Does not directly target p95 ECD,PMID: 29420467
+RC48 (Disitamab vedotin),"RemeGen Co., Ltd.",HER2 Domain IV,Similar to trastuzumab,"Approved (China), Phase 3 global",ADC with novel humanized anti-HER2,Active in HER2-low tumors,Limited p95-specific activity,PMID: 35917815
