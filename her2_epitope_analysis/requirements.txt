@@ -1,0 +1,8 @@
+biopython==1.83
+pandas==2.2.0
+numpy==1.26.3
+requests==2.31.0
+py3Dmol==2.1.0
+python-docx==1.1.0
+matplotlib==3.8.2
+seaborn==0.13.1

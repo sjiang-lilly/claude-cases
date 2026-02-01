@@ -1,0 +1,6 @@
+epitope_id,domain,residues,key_residues,description,mab_binding,structural_features,adc_suitability
+EPI-001,Domain IV,557-603,"Arg559, His560, Tyr572, Phe573, Asp597, Trp592","Membrane-proximal epitope in subdomain IV, juxtamembrane region",Trastuzumab; T-DM1; T-DXd; Margetuximab,"Exposed loop region, stable conformation",High - proven clinical efficacy
+EPI-002,Domain II,266-333,"Ser288, Phe293, Lys294, Pro295, Glu299","Dimerization arm epitope, blocks HER2-HER3 heterodimerization",Pertuzumab,"Dimerization interface, allosteric site",Moderate - blocks signaling but slower internalization
+EPI-003,Domain I,23-165,"Thr144, Leu149, Arg150, Ile153",N-terminal L1 domain epitope,Zanidatamab (in combination),Accessible N-terminal region,Moderate - less validated
+EPI-004,Domain III,355-435,"Asp355, Leu356, Thr359, Glu395",L2 domain ligand-binding region,Experimental mAbs,Central ECD region,Under investigation
+EPI-005,Domain II + IV,Biparatopic,Combined epitopes,Bispecific targeting both dimerization and juxtamembrane regions,Zanidatamab,"Dual epitope engagement, receptor clustering",High - enhanced internalization via cross-linking

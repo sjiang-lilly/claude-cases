@@ -1,0 +1,10 @@
+mutation,domain,residue_position,frequency_percent,cancer_types,affects_epitope,resistance_mechanism,adc_impact,clinical_significance
+S310F,Domain II,310,0.8,"Breast, Gastric, Bladder",Pertuzumab (reduced),"Reduced pertuzumab binding, altered dimerization",Minimal (does not affect T-DM1/T-DXd),May reduce pertuzumab efficacy
+L755S,Kinase domain,755,2.1,"Breast, NSCLC",No (intracellular),"Lapatinib/neratinib resistance, HER2 activation",None (ADC binding unaffected),"TKI resistance, ADC remains effective"
+V777L,Kinase domain,777,1.5,"Breast, Colorectal",No (intracellular),Increased kinase activity,None (ADC binding unaffected),"Activating mutation, ADC effective"
+T798M,Kinase domain,798,0.5,Breast (acquired),No (intracellular),"Gatekeeper mutation, TKI resistance",None (ADC binding unaffected),"TKI resistance, ADC alternative"
+D769H/Y,Kinase domain,769,1.2,"Breast, NSCLC",No (intracellular),Altered kinase activity,None (ADC binding unaffected),May affect TKI sensitivity
+R678Q,Juxtamembrane,678,0.3,Breast,Potentially (near Domain IV),Unknown mechanism,Under investigation,"Rare, significance unclear"
+HER2 loss/downregulation,N/A,N/A,15.0,All HER2+ cancers (post-treatment),Complete loss,"Reduced target expression, antigen escape",Major - loss of target,Major resistance mechanism
+p95-HER2 (truncated),N-terminal truncation,611-start,20.0,Breast (aggressive),Loss of ECD (Domains I-IV),"Loss of extracellular domain, no mAb binding",Major - no binding site,"Trastuzumab resistant, poor prognosis"
+HER2 splice variants,Various,N/A,5.0,Breast,Variable,Altered protein structure,Variable - epitope dependent,May affect therapy response

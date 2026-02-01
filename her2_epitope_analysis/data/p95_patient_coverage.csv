@@ -1,0 +1,6 @@
+cancer_type,p95_frequency_percent,sample_size,detection_method,co_expression_with_fl,prognosis_impact,reference
+HER2+ Breast Cancer,30,483,IHC (clone specific),70% co-express full-length HER2,Poor (HR 2.4 for recurrence),"Scaltriti et al., JNCI 2007"
+HER2+ Breast Cancer (metastatic),40,234,IHC + Western blot,65% co-express,Very poor (reduced OS),"Sáez et al., Clin Cancer Res 2006"
+Trastuzumab-resistant Breast Cancer,50,156,IHC,55% co-express,Associated with resistance,"Arribas et al., Cancer Res 2011"
+HER2+ Gastric Cancer,22,312,IHC,75% co-express,Poor prognosis,"Pályi-Krekk et al., 2008"
+HER2+ Ovarian Cancer,18,89,Western blot,80% co-express,Under investigation,"Molina et al., 2010"

@@ -1,0 +1,5 @@
+variant,mechanism,start_residue,start_codon,molecular_weight_kda,missing_domains,retained_structure,extracellular_length_aa,constitutively_active,trastuzumab_binding,notes
+p95-CTF611,Alternative translation initiation,611,Met611 (internal AUG),95,"Domain I, II, III, IV (complete ECD)",Juxtamembrane stub (611-652) + TM + Kinase,42,Yes,No,"Most common p95 form, constitutively active kinase"
+p95-CTF648,Alternative translation initiation,648,Met648 (internal AUG),90,Complete ECD + most juxtamembrane,Short stub (648-652) + TM + Kinase,5,Yes,No,"Minimal extracellular domain, highly aggressive"
+p95-shed,"Proteolytic shedding (ADAM10/17, MMP)",~630-650 (variable),N/A (cleavage product),95-100,Domain I-IV (shed into serum),Variable stub + TM + Kinase,Variable (0-50),Partial,No (ECD shed),Shed ECD detectable in serum as biomarker
+Δ16HER2,Alternative splicing (exon 16 skip),1,Normal (Met1),185,None (but lacks exon 16: aa 634-649),Full ECD with deletion in Domain IV,Full minus 16 aa,Yes (forms stable homodimers),Reduced,"Forms covalent dimers, oncogenic, partial trastuzumab resistance"

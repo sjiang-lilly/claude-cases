@@ -1,0 +1,8 @@
+name,brand_name,type,epitope_domain,binding_residues,kd_nm,mechanism,approval_status,indication,adc_derivative,linker,payload,dar
+Trastuzumab,Herceptin,Monoclonal antibody (IgG1),Domain IV,557-603,5.0,"ADCC, blocks HER2 signaling, prevents cleavage",FDA approved (1998),"HER2+ breast cancer, gastric cancer","Yes (T-DM1, T-DXd)",,,
+Pertuzumab,Perjeta,Monoclonal antibody (IgG1),Domain II,266-333,1.0,Blocks HER2-HER3 dimerization,FDA approved (2012),HER2+ breast cancer (with trastuzumab),No,,,
+Trastuzumab emtansine,Kadcyla (T-DM1),ADC,Domain IV,557-603,5.0,"Internalization, lysosomal release of DM1 (maytansinoid)",FDA approved (2013),HER2+ metastatic breast cancer,,Non-cleavable thioether (SMCC),"DM1 (maytansinoid, microtubule inhibitor)",3.5
+Trastuzumab deruxtecan,"Enhertu (T-DXd, DS-8201)",ADC,Domain IV,557-603,5.0,"Internalization, cleavable linker, bystander effect",FDA approved (2019),"HER2+ breast cancer, HER2-low breast cancer, gastric, NSCLC",,Cleavable tetrapeptide (GGFG),"Deruxtecan (DXd, topoisomerase I inhibitor)",8.0
+Margetuximab,Margenza,Monoclonal antibody (Fc-optimized),Domain IV,557-603,4.8,Enhanced ADCC via Fc optimization (F243L/R292P/Y300L/V305I/P396L),FDA approved (2020),HER2+ metastatic breast cancer,No,,,
+Zanidatamab,N/A (in development),Bispecific antibody,Domain II + Domain IV,Biparatopic,0.5,"Dual epitope binding, receptor clustering, enhanced internalization",Phase 3 (2024),"HER2+ biliary tract, gastric, breast cancer",In development (ZW49),,,
+Disitamab vedotin,Aidixi,ADC,Domain IV,557-603 (similar to trastuzumab),3.0,"Internalization, MMAE payload",Approved in China (2021),"HER2+ gastric cancer, urothelial cancer",,Cleavable mc-vc-PABC,"MMAE (auristatin, microtubule inhibitor)",4.0
