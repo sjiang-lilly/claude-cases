@@ -1,0 +1,38 @@
+[
+  {
+    "antibody": "p95-ESM-002",
+    "docking_score": 0.78,
+    "predicted_Kd_nM": 0.13,
+    "predicted_dG_kcal_mol": -13.5,
+    "estimated_interface_area_A2": 1112.0,
+    "binding_classification": "Very Strong (sub-nM)",
+    "adc_suitability": 9.0
+  },
+  {
+    "antibody": "p95-ESM-004",
+    "docking_score": 0.741,
+    "predicted_Kd_nM": 0.2,
+    "predicted_dG_kcal_mol": -13.23,
+    "estimated_interface_area_A2": 1096.0,
+    "binding_classification": "Very Strong (sub-nM)",
+    "adc_suitability": 9.0
+  },
+  {
+    "antibody": "p95-ESM-001",
+    "docking_score": 0.734,
+    "predicted_Kd_nM": 0.21,
+    "predicted_dG_kcal_mol": -13.18,
+    "estimated_interface_area_A2": 1094.0,
+    "binding_classification": "Very Strong (sub-nM)",
+    "adc_suitability": 9.0
+  },
+  {
+    "antibody": "p95-ESM-003",
+    "docking_score": 0.696,
+    "predicted_Kd_nM": 0.33,
+    "predicted_dG_kcal_mol": -12.93,
+    "estimated_interface_area_A2": 1078.0,
+    "binding_classification": "Very Strong (sub-nM)",
+    "adc_suitability": 8.0
+  }
+]

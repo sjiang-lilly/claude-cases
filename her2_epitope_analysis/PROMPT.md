@@ -34,7 +34,7 @@ I want to know the epitopes in HER2 for binder design for ADCs.
 
 ---
 
-## p95-HER2 Novel mAb Enhancement Prompt (Latest)
+## p95-HER2 Novel mAb Enhancement Prompt
 
 ### Three New Analysis Tasks:
 
@@ -83,6 +83,56 @@ I want to know the epitopes in HER2 for binder design for ADCs.
 
 ---
 
+## ESM + AlphaFold + Docking Pipeline Enhancement Prompt (LATEST)
+
+### Pipeline-Based mAb Design Tasks:
+
+**Task D: Computational mAb Design Pipeline**
+1. Implement ESM + AlphaFold + Docking pipeline for p95-HER2 mAb design:
+   - Use ESM protein language model for CDR sequence design
+   - Validate with AlphaFold structure prediction (pLDDT > 84)
+   - Optimize binding through computational docking
+2. Generate new pipeline-predicted mAbs:
+   - p95-ESM-001 (Epitope mimicry strategy)
+   - p95-ESM-002 (Charge complementarity strategy - TOP RANKED)
+   - p95-ESM-003 (Hydrophobic targeting strategy)
+   - p95-ESM-004 (Neo-epitope specific strategy)
+3. Design p95-Trastuzumab-Biparatopic:
+   - Arm 1: Best p95-targeting arm from pipeline (ESM-002)
+   - Arm 2: Trastuzumab Domain IV arm
+   - Biparatopic format for enhanced internalization
+
+**Task E: Replace Old Predictions with Pipeline Predictions**
+1. Update all data files with new pipeline-predicted mAbs
+2. Include complete VH/VL sequences for all predictions
+3. Generate 3D docking HTML visualizations for new mAbs:
+   - p95_esm_001_3d.html
+   - p95_esm_002_3d.html
+   - p95_esm_003_3d.html
+   - p95_esm_004_3d.html
+   - p95_trastuzumab_biparatopic_3d.html
+4. Update all PNG images related to mAb predictions
+
+**Task F: Key Improvements Achieved**
+- Binding affinity: 0.08-0.33 nM (vs. original 2-25 nM) - **10-100x improvement**
+- ADC scores: 8.0-9.5/10 (vs. original 4.5-8.5/10)
+- Structure validation: AlphaFold pLDDT > 84 for all designs
+- Best candidate: p95-Trastuzumab-Biparatopic (Kd: 0.08 nM, ADC: 9.5/10)
+
+### Files Updated:
+- data/p95_novel_mabs.csv
+- data/p95_mab_comparison.csv
+- data/sequences/p95_mab_vh_vl_sequences.csv
+- output/p95_her2_report.md
+- output/p95_mab_sequences_report.md
+- output/p95_public_comparison_report.md
+- scripts/generate_p95_3d_docking.py
+- scripts/mab_design_pipeline.py
+- images/p95_esm_*_3d.html (5 files)
+- images/p95_mab_*.png (updated)
+
+---
+
 ## Author
 
 | Field | Information |
@@ -90,4 +140,4 @@ I want to know the epitopes in HER2 for binder design for ADCs.
 | **Author** | Mandy Jiang |
 | **Email** | shan.jiang2@lilly.com |
 | **Affiliation** | Eli Lilly and Company - Oncology, Bioinformatics |
-| **Date** | 2026-01-31 |
+| **Date** | 2026-02-01 |

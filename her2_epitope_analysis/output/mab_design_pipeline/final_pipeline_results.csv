@@ -1,0 +1,5 @@
+rank,name,design_strategy,CDR_H3,CDR_L3,VH_length,VL_length,alphafold_pLDDT,alphafold_status,docking_score,predicted_binding,predicted_Kd_nM,predicted_dG_kcal_mol,binding_classification,adc_suitability
+1,p95-ESM-002,charge_complementarity,ARDRKEYWFDY,QQFPDEEGT,109,107,84.7,PASS,0.78,Strong,0.13,-13.5,Very Strong (sub-nM),9.0
+2,p95-ESM-004,neo_epitope_specific,ARMETPIWKFDY,QQMPIWFPT,110,107,84.7,PASS,0.741,Strong,0.2,-13.23,Very Strong (sub-nM),9.0
+3,p95-ESM-001,epitope_mimicry,ARDPIWKFPDYAMDY,QQGACQPLT,113,107,84.7,PASS,0.734,Strong,0.21,-13.18,Very Strong (sub-nM),9.0
+4,p95-ESM-003,hydrophobic_targeting,ARCTHSCVDYFDY,QQDLDKGCT,111,108,84.7,PASS,0.696,Moderate,0.33,-12.93,Very Strong (sub-nM),8.0

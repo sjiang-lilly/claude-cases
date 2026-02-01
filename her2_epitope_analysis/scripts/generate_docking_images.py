@@ -11,14 +11,14 @@ import matplotlib.patches as mpatches
 import numpy as np
 import os
 
-# Domain color scheme
+# Domain color scheme - STRONG COLORS (matching p95 files)
 DOMAIN_COLORS = {
-    "Domain I": "#FF6B6B",    # Red
-    "Domain II": "#4ECDC4",   # Teal
-    "Domain III": "#45B7D1",  # Blue
-    "Domain IV": "#96CEB4",   # Green
-    "Antibody Heavy": "#DDA0DD",  # Plum
-    "Antibody Light": "#F0E68C",  # Khaki
+    "Domain I": "#E53935",    # Strong Red
+    "Domain II": "#00ACC1",   # Strong Cyan
+    "Domain III": "#1E88E5",  # Strong Blue
+    "Domain IV": "#43A047",   # Strong Green
+    "Antibody Heavy": "#AB47BC",  # Strong Purple
+    "Antibody Light": "#FF7043",  # Strong Orange
 }
 
 # HER2 domain residue ranges (for chain A in PDB structures)
@@ -239,50 +239,214 @@ def generate_py3dmol_html(pdb_file, output_html, title="HER2 Structure"):
     with open(pdb_file, 'r') as f:
         pdb_data = f.read()
 
+    # Determine structure-specific chain coloring
+    pdb_name = os.path.basename(pdb_file).replace('.pdb', '')
+
+    if pdb_name == "1N8Z":
+        # 1N8Z: Chain A = Light Chain, Chain B = Heavy Chain, Chain C = HER2
+        chain_coloring = '''
+            // ============================================
+            // HER2 (Chain C) - STRONG COLORS
+            // ============================================
+            viewer.setStyle({chain: "C", resi: ["23-195"]}, {cartoon: {color: "#E53935"}});
+            viewer.setStyle({chain: "C", resi: ["196-319"]}, {cartoon: {color: "#00ACC1"}});
+            viewer.setStyle({chain: "C", resi: ["320-488"]}, {cartoon: {color: "#1E88E5"}});
+            viewer.setStyle({chain: "C", resi: ["489-630"]}, {cartoon: {color: "#43A047"}});
+
+            // ============================================
+            // TRASTUZUMAB FAB - STRONG COLORS
+            // ============================================
+            // Chain A: Light Chain - Strong Orange
+            viewer.setStyle({chain: "A"}, {cartoon: {color: "#FF7043"}});
+            // Chain B: Heavy Chain - Strong Purple
+            viewer.setStyle({chain: "B"}, {cartoon: {color: "#AB47BC"}});
+
+            // Add epitope surface (Domain IV - Trastuzumab binding site)
+            viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity: 0.6, color: "#FF4081"}, {chain: "C", resi: ["557-603"]});
+'''
+        her2_chain_note = "HER2 is Chain C"
+
+    elif pdb_name == "1S78":
+        # 1S78: Chain A,B = HER2, Chain C,E = Light Chain, Chain D,F = Heavy Chain
+        chain_coloring = '''
+            // ============================================
+            // HER2 (Chains A, B) - STRONG COLORS
+            // ============================================
+            viewer.setStyle({chain: "A", resi: ["23-195"]}, {cartoon: {color: "#E53935"}});
+            viewer.setStyle({chain: "A", resi: ["196-319"]}, {cartoon: {color: "#00ACC1"}});
+            viewer.setStyle({chain: "A", resi: ["320-488"]}, {cartoon: {color: "#1E88E5"}});
+            viewer.setStyle({chain: "A", resi: ["489-630"]}, {cartoon: {color: "#43A047"}});
+
+            viewer.setStyle({chain: "B", resi: ["23-195"]}, {cartoon: {color: "#E53935"}});
+            viewer.setStyle({chain: "B", resi: ["196-319"]}, {cartoon: {color: "#00ACC1"}});
+            viewer.setStyle({chain: "B", resi: ["320-488"]}, {cartoon: {color: "#1E88E5"}});
+            viewer.setStyle({chain: "B", resi: ["489-630"]}, {cartoon: {color: "#43A047"}});
+
+            // ============================================
+            // PERTUZUMAB FABs - STRONG COLORS
+            // ============================================
+            // Light Chains (C, E) - Strong Orange
+            viewer.setStyle({chain: "C"}, {cartoon: {color: "#FF7043"}});
+            viewer.setStyle({chain: "E"}, {cartoon: {color: "#FF7043"}});
+            // Heavy Chains (D, F) - Strong Purple
+            viewer.setStyle({chain: "D"}, {cartoon: {color: "#AB47BC"}});
+            viewer.setStyle({chain: "F"}, {cartoon: {color: "#AB47BC"}});
+
+            // Add epitope surface (Domain II - Pertuzumab binding site)
+            viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity: 0.6, color: "#FF4081"}, {chain: "A", resi: ["266-333"]});
+            viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity: 0.6, color: "#FF4081"}, {chain: "B", resi: ["266-333"]});
+'''
+        her2_chain_note = "HER2 is Chains A and B"
+
+    elif pdb_name == "6OGE":
+        # 6OGE: Chain A = HER2, B = Pertuzumab Light, C = Pertuzumab Heavy, D = Trastuzumab Light, E = Trastuzumab Heavy
+        chain_coloring = '''
+            // ============================================
+            // HER2 (Chain A) - STRONG COLORS
+            // ============================================
+            viewer.setStyle({chain: "A", resi: ["23-195"]}, {cartoon: {color: "#E53935"}});
+            viewer.setStyle({chain: "A", resi: ["196-319"]}, {cartoon: {color: "#00ACC1"}});
+            viewer.setStyle({chain: "A", resi: ["320-488"]}, {cartoon: {color: "#1E88E5"}});
+            viewer.setStyle({chain: "A", resi: ["489-630"]}, {cartoon: {color: "#43A047"}});
+            viewer.setStyle({chain: "A", resi: ["631-644"]}, {cartoon: {color: "#FFD600"}});
+
+            // ============================================
+            // PERTUZUMAB FAB (Chains B, C) - STRONG COLORS
+            // ============================================
+            // Chain B: Light Chain - Strong Orange
+            viewer.setStyle({chain: "B"}, {cartoon: {color: "#FF7043"}});
+            // Chain C: Heavy Chain - Strong Purple
+            viewer.setStyle({chain: "C"}, {cartoon: {color: "#AB47BC"}});
+
+            // ============================================
+            // TRASTUZUMAB FAB (Chains D, E) - STRONG COLORS
+            // ============================================
+            // Chain D: Light Chain - Strong Orange
+            viewer.setStyle({chain: "D"}, {cartoon: {color: "#FF7043"}});
+            // Chain E: Heavy Chain - Strong Purple
+            viewer.setStyle({chain: "E"}, {cartoon: {color: "#AB47BC"}});
+
+            // Add epitope surfaces
+            // Domain II - Pertuzumab binding site
+            viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity: 0.6, color: "#00BCD4"}, {chain: "A", resi: ["266-333"]});
+            // Domain IV - Trastuzumab binding site
+            viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity: 0.6, color: "#FF4081"}, {chain: "A", resi: ["557-603"]});
+'''
+        her2_chain_note = "HER2 is Chain A; Pertuzumab is B/C; Trastuzumab is D/E"
+
+    else:
+        # Default generic coloring
+        chain_coloring = '''
+            // ============================================
+            // HER2 DOMAINS (Chain A) - STRONG COLORS
+            // ============================================
+            viewer.setStyle({chain: "A", resi: ["23-195"]}, {cartoon: {color: "#E53935"}});
+            viewer.setStyle({chain: "A", resi: ["196-319"]}, {cartoon: {color: "#00ACC1"}});
+            viewer.setStyle({chain: "A", resi: ["320-488"]}, {cartoon: {color: "#1E88E5"}});
+            viewer.setStyle({chain: "A", resi: ["489-630"]}, {cartoon: {color: "#43A047"}});
+
+            // ============================================
+            // ANTIBODY CHAINS - STRONG COLORS
+            // ============================================
+            viewer.setStyle({chain: "B"}, {cartoon: {color: "#AB47BC"}});
+            viewer.setStyle({chain: "C"}, {cartoon: {color: "#FF7043"}});
+            viewer.setStyle({chain: "H"}, {cartoon: {color: "#AB47BC"}});
+            viewer.setStyle({chain: "L"}, {cartoon: {color: "#FF7043"}});
+'''
+        her2_chain_note = "Default chain assignment"
+
     html_template = f'''<!DOCTYPE html>
 <html>
 <head>
     <title>{title}</title>
     <script src="https://3dmol.org/build/3Dmol-min.js"></script>
     <style>
-        body {{ font-family: Arial, sans-serif; margin: 20px; }}
-        h1 {{ color: #333; }}
-        .mol-container {{ width: 800px; height: 600px; position: relative; border: 1px solid #ccc; }}
-        .legend {{ margin-top: 20px; }}
-        .legend-item {{ display: inline-block; margin-right: 20px; }}
-        .color-box {{ display: inline-block; width: 20px; height: 20px; margin-right: 5px; vertical-align: middle; }}
+        body {{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }}
+        h1 {{
+            color: #333;
+            border-bottom: 2px solid #1E88E5;
+            padding-bottom: 10px;
+        }}
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+        }}
+        .mol-container {{
+            width: 100%;
+            height: 600px;
+            position: relative;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+        }}
+        .legend {{
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }}
+        .legend h3 {{
+            margin-top: 0;
+            color: #333;
+        }}
+        .legend-item {{
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }}
+        .color-box {{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1px solid #333;
+            border-radius: 3px;
+        }}
+        .info-box {{
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }}
     </style>
 </head>
 <body>
-    <h1>{title}</h1>
-    <div id="viewer" class="mol-container"></div>
-    <div class="legend">
-        <div class="legend-item"><span class="color-box" style="background-color: #FF6B6B;"></span>Domain I</div>
-        <div class="legend-item"><span class="color-box" style="background-color: #4ECDC4;"></span>Domain II</div>
-        <div class="legend-item"><span class="color-box" style="background-color: #45B7D1;"></span>Domain III</div>
-        <div class="legend-item"><span class="color-box" style="background-color: #96CEB4;"></span>Domain IV</div>
-        <div class="legend-item"><span class="color-box" style="background-color: #DDA0DD;"></span>Antibody Heavy Chain</div>
-        <div class="legend-item"><span class="color-box" style="background-color: #F0E68C;"></span>Antibody Light Chain</div>
+    <div class="container">
+        <h1>🧬 {title}</h1>
+        <div id="viewer" class="mol-container"></div>
+        <div class="legend">
+            <h3>Color Legend</h3>
+            <div class="legend-item"><span class="color-box" style="background-color: #E53935;"></span>Domain I (23-195)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #00ACC1;"></span>Domain II (196-319)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #1E88E5;"></span>Domain III (320-488)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #43A047;"></span>Domain IV (489-630)</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #AB47BC;"></span>Antibody Heavy Chain</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #FF7043;"></span>Antibody Light Chain</div>
+            <div class="legend-item"><span class="color-box" style="background-color: #FF4081;"></span>Epitope Surface</div>
+        </div>
+        <div class="info-box">
+            <h3>Structure Information</h3>
+            <p><strong>Source:</strong> RCSB Protein Data Bank</p>
+            <p><strong>Chain Assignment:</strong> {her2_chain_note}</p>
+            <p><strong>Visualization:</strong> Interactive 3D view - drag to rotate, scroll to zoom</p>
+        </div>
     </div>
     <script>
         var viewer = $3Dmol.createViewer("viewer", {{backgroundColor: "white"}});
         var pdbData = `{pdb_data}`;
         viewer.addModel(pdbData, "pdb");
 
-        // Color HER2 domains (chain A typically)
-        viewer.setStyle({{chain: "A", resi: ["23-195"]}}, {{cartoon: {{color: "#FF6B6B"}}}});
-        viewer.setStyle({{chain: "A", resi: ["196-319"]}}, {{cartoon: {{color: "#4ECDC4"}}}});
-        viewer.setStyle({{chain: "A", resi: ["320-488"]}}, {{cartoon: {{color: "#45B7D1"}}}});
-        viewer.setStyle({{chain: "A", resi: ["489-630"]}}, {{cartoon: {{color: "#96CEB4"}}}});
-
-        // Color antibody chains
-        viewer.setStyle({{chain: "B"}}, {{cartoon: {{color: "#DDA0DD"}}}});
-        viewer.setStyle({{chain: "C"}}, {{cartoon: {{color: "#F0E68C"}}}});
-        viewer.setStyle({{chain: "H"}}, {{cartoon: {{color: "#DDA0DD"}}}});
-        viewer.setStyle({{chain: "L"}}, {{cartoon: {{color: "#F0E68C"}}}});
+{chain_coloring}
 
         viewer.zoomTo();
         viewer.render();
+        viewer.spin("y", 0.3);
     </script>
 </body>
 </html>'''

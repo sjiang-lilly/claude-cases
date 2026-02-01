@@ -1,0 +1,57 @@
+[
+  {
+    "name": "p95-ESM-001",
+    "strategy": "epitope_mimicry",
+    "CDR_H1": "GYTFTSYW",
+    "CDR_H2": "INPIWKGS",
+    "CDR_H3": "ARDPIWKFPDYAMDY",
+    "CDR_L1": "RASQGISSWLA",
+    "CDR_L2": "AASSLQS",
+    "CDR_L3": "QQGACQPLT",
+    "rationale": "CDRs contain key epitope motifs for complementarity"
+  },
+  {
+    "name": "p95-ESM-002",
+    "strategy": "charge_complementarity",
+    "CDR_H1": "GYTFTDYE",
+    "CDR_H2": "INPKRGST",
+    "CDR_H3": "ARDRKEYWFDY",
+    "CDR_L1": "RASQDISKYLN",
+    "CDR_L2": "AASRLQS",
+    "CDR_L3": "QQFPDEEGT",
+    "rationale": "Charged CDRs complement epitope charge distribution"
+  },
+  {
+    "name": "p95-ESM-003",
+    "strategy": "hydrophobic_targeting",
+    "CDR_H1": "GYTFTSYY",
+    "CDR_H2": "INWWGGST",
+    "CDR_H3": "ARCTHSCVDYFDY",
+    "CDR_L1": "RASQSVSSSYLA",
+    "CDR_L2": "GASSRAT",
+    "CDR_L3": "QQDLDKGCT",
+    "rationale": "Hydrophobic CDRs target membrane-proximal region"
+  },
+  {
+    "name": "p95-ESM-004",
+    "strategy": "neo_epitope_specific",
+    "CDR_H1": "GYTFTNYM",
+    "CDR_H2": "INMETPGS",
+    "CDR_H3": "ARMETPIWKFDY",
+    "CDR_L1": "RASQMETSWLA",
+    "CDR_L2": "AASSLQS",
+    "CDR_L3": "QQMPIWFPT",
+    "rationale": "Specifically targets p95 neo-epitope at Met611"
+  },
+  {
+    "name": "p95-ESM-005-Bispecific",
+    "strategy": "bispecific_dual_targeting",
+    "arm1_target": "p95-HER2 JM stub (615-635)",
+    "arm2_target": "FL-HER2 Domain IV (557-603)",
+    "CDR_H3_arm1": "ARDPIWKFPDY",
+    "CDR_H3_arm2": "SRWGGDGFYAMDY",
+    "CDR_L3_arm1": "QQGACQPLT",
+    "CDR_L3_arm2": "QQHYTTPPT",
+    "rationale": "Bispecific format targets both p95 and FL-HER2"
+  }
+]

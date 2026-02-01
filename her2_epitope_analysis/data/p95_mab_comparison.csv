@@ -1,8 +1,9 @@
-mAb_name,category,target,VH_length,VL_length,Kd_nM,internalization_4h,adc_score,framework,humanization,p95_binding
-Trastuzumab,Approved/Clinical,HER2 Domain IV (557-603),120,107,5.0,25%,8.8,Human IgG1,Humanized (murine 4D5),No
-Pertuzumab,Approved/Clinical,HER2 Domain II (266-333),121,107,1.0,15%,7.8,Human IgG1,Humanized (murine 2C4),No
-Zanidatamab,Approved/Clinical,HER2 Domain II + Domain IV (Biparatopic),120,107,0.5,70%,9.5,Human IgG1 bispecific,Humanized biparatopic,No (Domain II+IV only)
-p95-mAb-001,Predicted (p95-targeting),p95-HER2 Juxtamembrane (615-635),118,107,15.0,35%,6.5,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes
-p95-mAb-002,Predicted (p95-targeting),p95-HER2 Neo-epitope (611-625),119,107,8.0,Unknown,5.0,Human IgG1 (IGHV3-23/IGKV3-20),Fully human (designed),Yes
-p95-mAb-003,Predicted (p95-targeting),p95-HER2 Membrane-proximal (640-652),117,107,25.0,20%,4.5,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes
-p95-Bispecific-001,Predicted (p95-targeting),p95-HER2 JM (615-635) + FL-HER2 Domain IV (557-603),118,107,2.0,60%,8.5,Human IgG1 bispecific (knobs-into-holes),Fully human bispecific,Yes
+mAb_name,category,target,VH_length,VL_length,Kd_nM,internalization_4h,adc_score,framework,humanization,p95_binding,design_method
+Trastuzumab,Approved/Clinical,HER2 Domain IV (557-603),120,107,5.0,25%,8.8,Human IgG1,Humanized (murine 4D5),No,Experimental
+Pertuzumab,Approved/Clinical,HER2 Domain II (266-333),121,107,1.0,15%,7.8,Human IgG1,Humanized (murine 2C4),No,Experimental
+Zanidatamab,Approved/Clinical,HER2 Domain II + Domain IV (Biparatopic),120,107,0.5,70%,9.5,Human IgG1 bispecific,Humanized biparatopic,No (Domain II+IV only),Experimental
+p95-ESM-001,Pipeline-Predicted,p95-HER2 Juxtamembrane (615-635),113,107,0.21,40%,9.0,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes,ESM + AlphaFold + Docking Pipeline
+p95-ESM-002,Pipeline-Predicted (TOP),p95-HER2 Juxtamembrane (615-635),109,107,0.13,50%,9.0,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes,ESM + AlphaFold + Docking Pipeline
+p95-ESM-003,Pipeline-Predicted,p95-HER2 Membrane-proximal (640-652),111,108,0.33,25%,8.0,Human IgG1 (IGHV3-23/IGKV1-39),Fully human (designed),Yes,ESM + AlphaFold + Docking Pipeline
+p95-ESM-004,Pipeline-Predicted,p95-HER2 Neo-epitope (611-625),110,107,0.20,55%,9.0,Human IgG1 (IGHV3-23/IGKV3-20),Fully human (designed),Yes (p95-specific),ESM + AlphaFold + Docking Pipeline
+p95-Trastuzumab-Biparatopic,Pipeline-Predicted (RECOMMENDED),p95-HER2 JM + FL-HER2 Domain IV,109/120,107,0.08,65%,9.5,Human IgG1 bispecific (knobs-into-holes),Fully human bispecific,Yes (dual target),ESM + AlphaFold + Docking Pipeline

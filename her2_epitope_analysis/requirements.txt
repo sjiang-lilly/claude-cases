@@ -1,8 +1,34 @@
+# HER2 Epitope Analysis - Python Dependencies
+# Version: 2026-02-01 (with ESM + AlphaFold + Docking pipeline)
+
+# Core packages
 biopython==1.83
 pandas==2.2.0
 numpy==1.26.3
 requests==2.31.0
+
+# Visualization
 py3Dmol==2.1.0
-python-docx==1.1.0
 matplotlib==3.8.2
 seaborn==0.13.1
+
+# Document generation
+python-docx==1.1.0
+
+# Scientific computing
+scipy==1.12.0
+scikit-learn==1.4.0
+
+# ESM + AlphaFold + Docking Pipeline (optional)
+# Note: These require additional setup for full functionality
+# esm>=2.0.0         # ESM protein language model
+# alphafold>=2.0     # Structure prediction (requires GPU)
+# torch>=2.0.0       # PyTorch for deep learning
+
+# Molecular modeling (optional)
+# rdkit>=2023.09.1   # Cheminformatics
+# openmm>=8.0.0      # Molecular dynamics
+
+# Additional utilities
+tqdm>=4.66.0        # Progress bars
+tabulate>=0.9.0     # Table formatting

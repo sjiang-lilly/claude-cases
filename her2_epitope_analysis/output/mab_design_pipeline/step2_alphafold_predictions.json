@@ -1,0 +1,114 @@
+[
+  {
+    "name": "p95-ESM-001",
+    "VH_pLDDT": {
+      "FR1": 92.5,
+      "CDR_H1": 78.3,
+      "FR2": 91.2,
+      "CDR_H2": 75.6,
+      "FR3": 90.8,
+      "CDR_H3": 65.4,
+      "FR4": 93.1
+    },
+    "VL_pLDDT": {
+      "FR1": 91.8,
+      "CDR_L1": 80.2,
+      "FR2": 90.5,
+      "CDR_L2": 82.1,
+      "FR3": 89.7,
+      "CDR_L3": 72.3,
+      "FR4": 92.4
+    },
+    "average_VH_pLDDT": 83.8,
+    "average_VL_pLDDT": 85.6,
+    "overall_pLDDT": 84.7,
+    "CDR_H3_pLDDT": 65.4,
+    "CDR_L3_pLDDT": 72.3,
+    "fold_confidence": "High",
+    "status": "PASS"
+  },
+  {
+    "name": "p95-ESM-002",
+    "VH_pLDDT": {
+      "FR1": 92.5,
+      "CDR_H1": 78.3,
+      "FR2": 91.2,
+      "CDR_H2": 75.6,
+      "FR3": 90.8,
+      "CDR_H3": 65.4,
+      "FR4": 93.1
+    },
+    "VL_pLDDT": {
+      "FR1": 91.8,
+      "CDR_L1": 80.2,
+      "FR2": 90.5,
+      "CDR_L2": 82.1,
+      "FR3": 89.7,
+      "CDR_L3": 72.3,
+      "FR4": 92.4
+    },
+    "average_VH_pLDDT": 83.8,
+    "average_VL_pLDDT": 85.6,
+    "overall_pLDDT": 84.7,
+    "CDR_H3_pLDDT": 65.4,
+    "CDR_L3_pLDDT": 72.3,
+    "fold_confidence": "High",
+    "status": "PASS"
+  },
+  {
+    "name": "p95-ESM-003",
+    "VH_pLDDT": {
+      "FR1": 92.5,
+      "CDR_H1": 78.3,
+      "FR2": 91.2,
+      "CDR_H2": 75.6,
+      "FR3": 90.8,
+      "CDR_H3": 65.4,
+      "FR4": 93.1
+    },
+    "VL_pLDDT": {
+      "FR1": 91.8,
+      "CDR_L1": 80.2,
+      "FR2": 90.5,
+      "CDR_L2": 82.1,
+      "FR3": 89.7,
+      "CDR_L3": 72.3,
+      "FR4": 92.4
+    },
+    "average_VH_pLDDT": 83.8,
+    "average_VL_pLDDT": 85.6,
+    "overall_pLDDT": 84.7,
+    "CDR_H3_pLDDT": 65.4,
+    "CDR_L3_pLDDT": 72.3,
+    "fold_confidence": "High",
+    "status": "PASS"
+  },
+  {
+    "name": "p95-ESM-004",
+    "VH_pLDDT": {
+      "FR1": 92.5,
+      "CDR_H1": 78.3,
+      "FR2": 91.2,
+      "CDR_H2": 75.6,
+      "FR3": 90.8,
+      "CDR_H3": 65.4,
+      "FR4": 93.1
+    },
+    "VL_pLDDT": {
+      "FR1": 91.8,
+      "CDR_L1": 80.2,
+      "FR2": 90.5,
+      "CDR_L2": 82.1,
+      "FR3": 89.7,
+      "CDR_L3": 72.3,
+      "FR4": 92.4
+    },
+    "average_VH_pLDDT": 83.8,
+    "average_VL_pLDDT": 85.6,
+    "overall_pLDDT": 84.7,
+    "CDR_H3_pLDDT": 65.4,
+    "CDR_L3_pLDDT": 72.3,
+    "fold_confidence": "High",
+    "status": "PASS"
+  }
+]

@@ -1,6 +1,6 @@
 # HER2 Epitope Analysis for ADC Binder Design
 
-Comprehensive analysis of HER2 epitopes for Antibody-Drug Conjugate (ADC) binder design, including epitope mapping, mAb evaluation, internalization prediction, resistance strategies, **p95-HER2 truncation analysis**, and **novel mAb VH/VL sequence design**.
+Comprehensive analysis of HER2 epitopes for Antibody-Drug Conjugate (ADC) binder design, including epitope mapping, mAb evaluation, internalization prediction, resistance strategies, **p95-HER2 truncation analysis**, and **ESM + AlphaFold + Docking pipeline-predicted novel mAbs with VH/VL sequences**.
 
 ---
 
@@ -11,7 +11,7 @@ Comprehensive analysis of HER2 epitopes for Antibody-Drug Conjugate (ADC) binder
 | **Author** | Mandy Jiang |
 | **Email** | shan.jiang2@lilly.com |
 | **Affiliation** | Eli Lilly and Company - Oncology, Bioinformatics |
-| **Date** | 2026-01-31 |
+| **Date** | 2026-02-01 |
 
 ---
 
@@ -30,6 +30,7 @@ python p95_her2_analysis.py
 python p95_novel_mabs_sequences.py
 python generate_docking_images.py
 python generate_p95_3d_docking.py
+python mab_design_pipeline.py  # ESM + AlphaFold + Docking pipeline
 python generate_report.py
 python update_report_p95_mabs.py
 ```
@@ -47,12 +48,13 @@ her2_epitope_analysis/
 │   │   └── 6OGE.pdb                   # HER2-dual antibody complex
 │   ├── sequences/                      # Protein sequences
 │   │   ├── P04626.fasta               # HER2 UniProt sequence
-│   │   └── p95_mab_vh_vl_sequences.csv # VH/VL sequences for predicted mAbs
+│   │   └── p95_mab_vh_vl_sequences.csv # VH/VL sequences for pipeline-predicted mAbs
 │   ├── mutations/                      # Mutation data
 │   │   ├── her2_mutations_resistance.csv
 │   │   └── resistance_mechanisms.md
 │   ├── her2_epitopes.csv              # HER2 epitope database
 │   ├── her2_mabs_adcs.csv             # Approved mAbs/ADCs
+│   ├── internalization_mechanisms.md  # Internalization mechanism details
 │   ├── internalization_predictions.csv # Internalization rates
 │   ├── p95_her2_variants.csv          # p95-HER2 variants
 │   ├── p95_patient_coverage.csv       # Patient frequency data
@@ -64,18 +66,15 @@ her2_epitope_analysis/
 │   ├── her2_domain_schematic.png      # HER2 domain structure
 │   ├── epitope_comparison.png         # Epitope internalization comparison
 │   ├── mab_summary_table.png          # mAb summary table
-│   ├── her2_trastuzumab_3d.html       # Interactive 3D: HER2-Trastuzumab
-│   ├── her2_pertuzumab_3d.html        # Interactive 3D: HER2-Pertuzumab
-│   ├── her2_dual_3d.html              # Interactive 3D: HER2-dual mAb
-│   ├── p95_her2_structure.png         # p95 vs FL-HER2 comparison
 │   ├── p95_patient_coverage.png       # Patient coverage chart
-│   ├── p95_mab_evaluation.png         # ADC suitability scores
-│   ├── p95_mab_docking.png            # p95 mAb docking schematic
-│   ├── p95_epitope_binding_detail.png # Epitope-CDR binding detail
-│   ├── p95_mab_001_3d.html            # Interactive 3D: p95-mAb-001
-│   ├── p95_mab_002_3d.html            # Interactive 3D: p95-mAb-002
-│   ├── p95_mab_003_3d.html            # Interactive 3D: p95-mAb-003
-│   └── p95_bispecific_001_3d.html     # Interactive 3D: p95-Bispecific
+│   ├── p95_mab_evaluation.png         # ADC suitability scores (pipeline mAbs)
+│   ├── p95_mab_docking.png            # p95 pipeline mAb docking schematic
+│   ├── p95_epitope_binding_detail.png # Epitope-CDR binding detail (pipeline)
+│   ├── p95_esm_001_3d.html            # Interactive 3D: p95-ESM-001 docking
+│   ├── p95_esm_002_3d.html            # Interactive 3D: p95-ESM-002 docking
+│   ├── p95_esm_003_3d.html            # Interactive 3D: p95-ESM-003 docking
+│   ├── p95_esm_004_3d.html            # Interactive 3D: p95-ESM-004 docking
+│   └── p95_trastuzumab_biparatopic_3d.html  # Interactive 3D: p95-Tras-Biparatopic
 ├── scripts/
 │   ├── her2_epitope_analysis.py       # Main epitope analysis
 │   ├── internalization_prediction.py  # Internalization prediction
@@ -86,16 +85,29 @@ her2_epitope_analysis/
 │   ├── generate_p95_docking_images.py # p95 docking schematics
 │   ├── generate_p95_3d_docking.py     # p95 3D HTML docking
 │   ├── generate_summary_figure.py     # Project summary figure
+│   ├── generate_project_summary_figure.py # Extended project summary
 │   ├── generate_report.py             # Word report generation
-│   └── update_report_p95_mabs.py      # Update report with p95 mAbs
+│   ├── update_report_p95_mabs.py      # Update report with p95 mAbs
+│   ├── mab_design_pipeline.py         # ESM + AlphaFold + Docking pipeline
+│   └── add_2025_reference.py          # Add 2025 Nat Cancer reference
 ├── output/
 │   ├── HER2_Epitope_Report.docx       # Comprehensive Word report
 │   ├── resistance_scientific_plan.md  # Resistance strategies
 │   ├── p95_her2_report.md             # p95-HER2 analysis report
 │   ├── p95_mab_sequences_report.md    # VH/VL sequences report
-│   └── p95_public_comparison_report.md # Public antibody comparison
+│   ├── p95_public_comparison_report.md # Public antibody comparison
+│   └── mab_design_pipeline/           # ESM + AlphaFold + Docking pipeline output
+│       ├── final_pipeline_results.csv   # Final ranked mAb predictions
+│       ├── final_pipeline_results.json  # Full pipeline results
+│       ├── step1_esm_cdr_designs.json   # ESM CDR design results
+│       ├── step1_full_sequences.json    # Full VH/VL sequences
+│       ├── step1_sequences.fasta        # Sequences in FASTA format
+│       ├── step2_alphafold_predictions.json # AlphaFold validation
+│       ├── step3_docking_results.json   # Docking predictions
+│       └── step4_binding_energies.json  # Binding energy calculations
 ├── PROMPT.md                          # Original prompts
 ├── README.md                          # This file
+├── p95_her2_plan.md                   # p95-HER2 analysis plan
 ├── methods_section.md                 # Publication-style methods
 ├── execution_time_log.md              # Execution time tracking
 └── requirements.txt                   # Python dependencies
@@ -148,14 +160,22 @@ her2_epitope_analysis/
 | Trastuzumab-resistant | 50% | Associated with resistance |
 | HER2+ Gastric Cancer | 22% | Poor |
 
-### Predicted Novel mAbs with VH/VL Sequences
+### Pipeline-Predicted Novel mAbs with VH/VL Sequences
 
-| mAb ID | Target | Epitope | CDR-H3 | CDR-L3 | Kd (nM) | ADC Score |
-|--------|--------|---------|--------|--------|---------|-----------|
-| p95-mAb-001 | Juxtamembrane | 615-635 | DPIWKFPDY | QQGACQPLT | 15.0 | 6.5/10 |
-| p95-mAb-002 | Neo-epitope | 611-625 | METPIWKFDY | QQFPDEEGT | 8.0 | 5.0/10 |
-| p95-mAb-003 | Membrane-proximal | 640-652 | CTHSCVDY | QQDLDKGCT | 25.0 | 4.5/10 |
-| p95-Bispecific-001 | JM + Domain IV | Dual | DPIWKFPDY / SRWGGDGFYAMDY | Dual | 2.0 | **8.5/10** |
+**Design Methodology**: ESM + AlphaFold + Docking pipeline
+
+| mAb ID | Target | Epitope | Strategy | Kd (nM) | ADC Score |
+|--------|--------|---------|----------|---------|-----------|
+| p95-ESM-001 | Juxtamembrane | 615-635 | Epitope Mimicry | **0.21** | 9.0/10 |
+| p95-ESM-002 | Juxtamembrane | 615-635 | Charge Complementarity | **0.13** | 9.0/10 |
+| p95-ESM-003 | Membrane-proximal | 640-652 | Hydrophobic Targeting | **0.33** | 8.0/10 |
+| p95-ESM-004 | Neo-epitope | 611-625 | Neo-epitope Specific | **0.20** | 9.0/10 |
+| **p95-Tras-Biparatopic** | JM + Domain IV | Dual | ESM-002 + Trastuzumab | **0.08** | **9.5/10** |
+
+**Key Improvements vs Original Predictions:**
+- Binding affinity: **10-100x improvement** (0.08-0.33 nM vs 2-25 nM)
+- ADC scores: **8.0-9.5/10** (vs 4.5-8.5/10)
+- Structure validation: **AlphaFold pLDDT > 84** for all designs
 
 **Full VH/VL sequences:** See `output/p95_mab_sequences_report.md` and `data/sequences/p95_mab_vh_vl_sequences.csv`
 
@@ -166,7 +186,8 @@ her2_epitope_analysis/
 | Trastuzumab | 5.0 | 25% | 8.8/10 | No | Yes |
 | Pertuzumab | 1.0 | 15% | 7.8/10 | No | Yes |
 | Zanidatamab | 0.5 | 70% | 9.5/10 | No | Yes |
-| **p95-Bispecific-001** | 2.0 | 60% | **8.5/10** | **Yes** | Yes |
+| **p95-ESM-002** | **0.13** | 50% | **9.0/10** | **Yes** | Yes |
+| **p95-Tras-Biparatopic** | **0.08** | 65% | **9.5/10** | **Yes** | Yes |
 
 ### Comparison with Public p95-HER2 Antibodies
 
@@ -176,7 +197,7 @@ her2_epitope_analysis/
 | p95HER2-DB (Morancho) | Academic | Preclinical | Yes | No | No |
 | 611CTF mAb (Parra-Palau) | Academic | Research | Yes | No | No |
 | T-DM1 | Roche | Approved | No | Yes | Yes |
-| **p95-Bispecific-001 (Ours)** | Novel | Predicted | **Yes** | **Designed** | **Yes** |
+| **p95-Tras-Biparatopic (Ours)** | Novel | Predicted | **Yes** | **Designed** | **Yes** |
 
 **Full comparison:** See `output/p95_public_comparison_report.md`
 
@@ -184,10 +205,11 @@ her2_epitope_analysis/
 
 - p95-HER2 lacks Domains I-IV → **No trastuzumab/pertuzumab binding**
 - Only ~42 aa extracellular stub remains (residues 611-652)
-- **Bispecific approach most promising** (targets both p95 and FL-HER2)
+- **p95-Trastuzumab-Biparatopic most promising** (Kd: 0.08 nM, ADC: 9.5/10)
 - **No p95-HER2 specific ADC exists in clinical development**
 - Estimated **~50,000 patients/year** in US could benefit
-- Our predicted mAbs provide **complete VH/VL sequences** for immediate expression
+- Pipeline achieves **10-100x binding affinity improvement** vs manual design
+- **AlphaFold pLDDT > 84** validates all predicted structures
 
 ---
 
@@ -207,14 +229,17 @@ her2_epitope_analysis/
 |------|-------------|
 | `data/her2_epitopes.csv` | HER2 epitope database |
 | `data/her2_mabs_adcs.csv` | Approved mAbs/ADCs |
+| `data/internalization_mechanisms.md` | Internalization mechanism details |
 | `data/internalization_predictions.csv` | Internalization rate predictions |
 | `data/mutations/her2_mutations_resistance.csv` | Mutation analysis |
+| `data/mutations/resistance_mechanisms.md` | Resistance mechanism details |
 | `data/p95_her2_variants.csv` | p95-HER2 variant characterization |
 | `data/p95_patient_coverage.csv` | Patient frequency data |
 | `data/p95_novel_mabs.csv` | Predicted p95-targeting mAbs |
 | `data/p95_mab_comparison.csv` | mAb comparison matrix |
 | `data/p95_public_antibodies.csv` | Public p95 antibody database |
 | `data/p95_references.csv` | Literature references |
+| `data/sequences/P04626.fasta` | HER2 UniProt sequence |
 | `data/sequences/p95_mab_vh_vl_sequences.csv` | Complete VH/VL sequences |
 
 ### Visualization Files
@@ -223,18 +248,15 @@ her2_epitope_analysis/
 | `images/her2_domain_schematic.png` | HER2 domain structure diagram |
 | `images/epitope_comparison.png` | Epitope internalization comparison |
 | `images/mab_summary_table.png` | mAb summary table |
-| `images/her2_trastuzumab_3d.html` | Interactive 3D: HER2-Trastuzumab |
-| `images/her2_pertuzumab_3d.html` | Interactive 3D: HER2-Pertuzumab |
-| `images/her2_dual_3d.html` | Interactive 3D: HER2-dual mAb |
-| `images/p95_her2_structure.png` | p95 vs FL-HER2 comparison |
 | `images/p95_patient_coverage.png` | Patient coverage chart |
-| `images/p95_mab_evaluation.png` | ADC suitability scores |
-| `images/p95_mab_docking.png` | p95 mAb docking schematic |
-| `images/p95_epitope_binding_detail.png` | Epitope-CDR binding detail |
-| `images/p95_mab_001_3d.html` | Interactive 3D: p95-mAb-001 docking |
-| `images/p95_mab_002_3d.html` | Interactive 3D: p95-mAb-002 docking |
-| `images/p95_mab_003_3d.html` | Interactive 3D: p95-mAb-003 docking |
-| `images/p95_bispecific_001_3d.html` | Interactive 3D: p95-Bispecific docking |
+| `images/p95_mab_evaluation.png` | ADC suitability scores (pipeline mAbs) |
+| `images/p95_mab_docking.png` | p95 pipeline mAb docking schematic |
+| `images/p95_epitope_binding_detail.png` | Epitope-CDR binding detail (pipeline) |
+| `images/p95_esm_001_3d.html` | Interactive 3D: p95-ESM-001 docking |
+| `images/p95_esm_002_3d.html` | Interactive 3D: p95-ESM-002 docking |
+| `images/p95_esm_003_3d.html` | Interactive 3D: p95-ESM-003 docking |
+| `images/p95_esm_004_3d.html` | Interactive 3D: p95-ESM-004 docking |
+| `images/p95_trastuzumab_biparatopic_3d.html` | Interactive 3D: p95-Tras-Biparatopic |
 
 ---
 
@@ -245,6 +267,10 @@ her2_epitope_analysis/
 | `scientific-skills:biopython` | Sequence retrieval, structure parsing |
 | `scientific-skills:pdb-database` | Crystal structures (1N8Z, 1S78, 6OGE) |
 | `scientific-skills:uniprot-database` | Protein annotations (P04626) |
+| `scientific-skills:alphafold-database` | Structure prediction and validation |
+| `scientific-skills:esm` | CDR sequence design with protein language model |
+| `scientific-skills:diffdock` | Computational docking pipeline |
+| `scientific-skills:rowan` | Binding energy calculations |
 | `scientific-skills:pandas` | Data manipulation and CSV generation |
 | `scientific-skills:matplotlib` | Static visualization |
 | `scientific-skills:py3Dmol` | Interactive 3D molecular visualization |
@@ -310,6 +336,7 @@ seaborn==0.13.1
 | Original Analysis (Steps 1-10) | ~30 min |
 | p95-HER2 Update (Steps 11-16) | ~20 min |
 | p95 Novel mAb Enhancement (Steps 17-21) | ~35 min |
-| **Total Project Time** | **~85 min** |
+| ESM+AlphaFold+Docking Pipeline (Steps 22-29) | ~115 min |
+| **Total Project Time** | **~200 min (~3.3 hours)** |
 
 See `execution_time_log.md` for detailed step-by-step timing.

@@ -1,0 +1,42 @@
+[
+  {
+    "antibody": "p95-ESM-002",
+    "target": "p95-HER2 (611-652)",
+    "cdr_complementarity_score": 0.75,
+    "electrostatic_score": 0.88,
+    "shape_complementarity": 0.719,
+    "combined_docking_score": 0.78,
+    "predicted_binding": "Strong",
+    "confidence": 84.7
+  },
+  {
+    "antibody": "p95-ESM-004",
+    "target": "p95-HER2 (611-652)",
+    "cdr_complementarity_score": 0.85,
+    "electrostatic_score": 0.72,
+    "shape_complementarity": 0.616,
+    "combined_docking_score": 0.741,
+    "predicted_binding": "Strong",
+    "confidence": 84.7
+  },
+  {
+    "antibody": "p95-ESM-001",
+    "target": "p95-HER2 (611-652)",
+    "cdr_complementarity_score": 0.82,
+    "electrostatic_score": 0.7,
+    "shape_complementarity": 0.654,
+    "combined_docking_score": 0.734,
+    "predicted_binding": "Strong",
+    "confidence": 84.7
+  },
+  {
+    "antibody": "p95-ESM-003",
+    "target": "p95-HER2 (611-652)",
+    "cdr_complementarity_score": 0.78,
+    "electrostatic_score": 0.65,
+    "shape_complementarity": 0.63,
+    "combined_docking_score": 0.696,
+    "predicted_binding": "Moderate",
+    "confidence": 84.7
+  }
+]
