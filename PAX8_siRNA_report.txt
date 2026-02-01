@@ -1,0 +1,79 @@
+==================================================
+PAX8 siRNA Design Report
+==================================================
+Generated: 2026-01-31 20:57:31
+
+GENE INFORMATION
+------------------------------
+Gene: PAX8 (Paired Box 8)
+RefSeq: NM_003466.4
+Organism: Homo sapiens
+CDS Length: 1353 bp
+CDS Region: 167-1519
+
+DESIGN CRITERIA
+------------------------------
+- siRNA length: 19 nt + dTdT overhang
+- GC content: 30-50% (optimal)
+- Tuschl/Reynolds scoring rules applied
+- Off-target threshold: <16/19 match
+
+TOP 3 RECOMMENDED siRNAs
+==================================================
+
+#1 (Score: 9/10)
+   Position: 591-609
+   Sense:     5'-AATGGATGACAGTGATCAG-dTdT-3'
+   Antisense: 5'-CTGATCACTGTCATCCATT-dTdT-3'
+   GC: 42.1%
+   Off-target: PASS
+   Scoring: GC 30-50%: +2; Pos1 A/U: +1; Pos19 G/C: +1; 3' A/U moderate: +1; No poly-runs: +1; 5' A/U rich: +2; No 3' GC stretch: +1
+
+#2 (Score: 9/10)
+   Position: 1192-1210
+   Sense:     5'-AGTGAATACTCTGGCAATG-dTdT-3'
+   Antisense: 5'-CATTGCCAGAGTATTCACT-dTdT-3'
+   GC: 42.1%
+   Off-target: PASS
+   Scoring: GC 30-50%: +2; Pos1 A/U: +1; Pos19 G/C: +1; 3' A/U moderate: +1; No poly-runs: +1; 5' A/U rich: +2; No 3' GC stretch: +1
+
+#3 (Score: 9/10)
+   Position: 1289-1307
+   Sense:     5'-ATTACAGTTCCACATCAAG-dTdT-3'
+   Antisense: 5'-CTTGATGTGGAACTGTAAT-dTdT-3'
+   GC: 36.8%
+   Off-target: PASS
+   Scoring: GC 30-50%: +2; Pos1 A/U: +1; Pos19 G/C: +1; 3' A/U moderate: +1; No poly-runs: +1; 5' A/U rich: +2; No 3' GC stretch: +1
+
+ALL TOP 10 CANDIDATES
+--------------------------------------------------
+Rank  Pos     Score   GC%     Sense Sequence (5'-3')
+--------------------------------------------------
+1     591     9       42.1    AATGGATGACAGTGATCAG
+2     1192    9       42.1    AGTGAATACTCTGGCAATG
+3     1289    9       36.8    ATTACAGTTCCACATCAAG
+4     388     9       47.4    AGAATCATCCGGACCAAAG
+5     390     9       47.4    AATCATCCGGACCAAAGTG
+6     987     9       47.4    TTTGGATCTGCAGCAAGTC
+7     1286    9       31.6    ATTATTACAGTTCCACATC
+8     1288    9       31.6    TATTACAGTTCCACATCAA
+9     269     8       42.1    AGAAGATTGGGGACTACAA
+10    271     8       42.1    AAGATTGGGGACTACAAAC
+
+ORDERING FORMAT
+------------------------------
+- Standard desalted, 20 nmol scale
+- Include dTdT 3' overhangs on both strands
+- Order as single-stranded oligos for annealing
+  or as pre-annealed duplexes
+
+USAGE NOTES
+------------------------------
+- Recommended concentration: 20-50 nM
+- Transfection: Lipofectamine RNAiMAX or similar
+- Validate knockdown by qPCR and Western blot
+- Include non-targeting control siRNA
+
+==================================================
+End of Report
+==================================================
