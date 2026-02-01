@@ -4,6 +4,17 @@ Design of effective siRNAs to knockdown PAX8 (Paired Box 8), a transcription fac
 
 ---
 
+## Author
+
+| Field | Information |
+|-------|-------------|
+| **Author** | Mandy Jiang |
+| **Email** | shan.jiang2@lilly.com |
+| **Affiliation** | Eli Lilly and Company - Oncology, Bioinformatics |
+| **Date** | 2026-01-31 |
+
+---
+
 ## Gene Information
 
 | Property | Value |
