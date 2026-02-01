@@ -199,6 +199,16 @@ https://github.com/sjiang-lilly/claude-cases/her2_epitope_analysis
 
 10. Parra-Palau JL, Morancho B, Peg V, et al. Effect of p95HER2/611CTF on the response to trastuzumab and chemotherapy. J Natl Cancer Inst. 2014;106(11):dju291.
 
+### p95-HER2 and T-DXd Resistance (2025)
+
+11. Hu D, et al. p95HER2, a truncated form of the HER2 oncoprotein, drives an immunosuppressive program in HER2+ breast cancer that limits trastuzumab deruxtecan efficacy. Nat Cancer. 2025. doi:10.1038/s43018-025-00969-4. (PMID: 40579589)
+
+**Key findings from Hu et al. 2025:**
+- p95HER2 promotes PD-L1 expression and secretion of immunosuppressive mediators including IL-6
+- This immunosuppressive program limits T-DXd (trastuzumab deruxtecan) efficacy
+- Neratinib can degrade p95HER2, potentially restoring immune response
+- Suggests combining p95HER2-targeted strategies with T-DXd could enhance efficacy
+
 ### p95-HER2 Novel mAb Design References
 
 11. Morancho B, Parra-Palau JL, Ibrahim YH, et al. A dominant-negative N-terminal fragment of HER2 frequently expressed in breast cancers. Oncogene. 2013;32(39):4582-4592.

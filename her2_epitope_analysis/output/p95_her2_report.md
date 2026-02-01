@@ -39,6 +39,23 @@ p95-HER2 arises through three distinct mechanisms:
 - Activates PI3K/AKT and MAPK pathways
 - Associated with aggressive disease phenotype
 
+### 1.4 Immunosuppressive Program (NEW - Hu et al. 2025)
+
+**Critical 2025 Finding from Nature Cancer (Hu D, et al. PMID: 40579589):**
+
+p95HER2 drives an immunosuppressive tumor microenvironment that limits T-DXd efficacy:
+
+| Mechanism | Effect | Implication |
+|-----------|--------|-------------|
+| PD-L1 upregulation | Immune checkpoint activation | T cell exhaustion |
+| IL-6 secretion | Immunosuppressive cytokine | Reduced anti-tumor immunity |
+| T-DXd resistance | Limited bystander effect | Reduced ADC efficacy |
+
+**Therapeutic Insight:**
+- **Neratinib degrades p95HER2**, potentially restoring immune response
+- Combination of p95-targeting + T-DXd may overcome resistance
+- Supports rationale for p95-specific ADC development
+
 ---
 
 ## 2. Patient Coverage

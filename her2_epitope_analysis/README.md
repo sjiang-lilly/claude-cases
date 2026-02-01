@@ -293,6 +293,7 @@ seaborn==0.13.1
 8. Sáez R, et al. p95HER-2 predicts worse outcome in patients with HER-2-positive breast cancer. Clin Cancer Res. 2006;12:424-431.
 9. Pedersen K, et al. A naturally occurring HER2 carboxy-terminal fragment promotes mammary tumor growth. Mol Cell Biol. 2009;29:3319-3331.
 10. Parra-Palau JL, et al. Effect of p95HER2/611CTF on the response to trastuzumab and chemotherapy. J Natl Cancer Inst. 2014;106:dju291.
+11. **Hu D, et al. p95HER2, a truncated form of the HER2 oncoprotein, drives an immunosuppressive program in HER2+ breast cancer that limits trastuzumab deruxtecan efficacy. Nat Cancer. 2025. doi:10.1038/s43018-025-00969-4. (PMID: 40579589)**
 
 ### p95-HER2 Novel mAb Analysis
 11. Morancho B, et al. A dominant-negative N-terminal fragment of HER2 frequently expressed in breast cancers. Oncogene. 2013;32:4582-4592.
